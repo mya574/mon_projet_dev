@@ -1,16 +1,17 @@
 body{
-    background: url(image_de_fond.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
+    width: 100%;    /*l'espace que l'elément occupe*/
+    min-height: 100vh; /*hauteur*/
+    display:flex;
+    justify-content:center;
+    align-items: center; 
+    top: 10;
+    background-image: url(image_de_fond.jpg);
+    background-size: cover; /*pour que l'image couvre*/
 }
-.contenu{
-    max-width: 100%; /*sa mets les deux boutons en centre*/
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    background-color: black;
-    position: absolute;
-    
+.phrase{
+    display:flex;
+    right: 400px;
 }
 .btn1{
     font-size:1em ;
