@@ -1,0 +1,46 @@
+body{
+    background: url(image_de_fond.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.contenu{
+    max-width: 100%; /*sa mets les deux boutons en centre*/
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+    position: absolute;
+    
+}
+.btn1{
+    font-size:1em ;
+    color:white ; /*couleur et taille de l'ecriture de reserver*/
+    background: #fb911f;
+    padding: 10px 20px; /*largeure et longeure des boxe */
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+.btn2{
+    font-size:1em ;
+    color:white ;
+    background: #584299;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+.btn1:hover{
+    letter-spacing: 4px; /*animation du bouton*/
+}
+.btn2:hover{
+    letter-spacing: 4px; /*animation du bouton*/
+}
