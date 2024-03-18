@@ -19,10 +19,10 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
                             header('Location: admin.php');
                             break;
                         case 'ecole':
-                            header('Location: ecole.php');
+                            header('Location: ../quize/creation-quiz/');
                             break;
                         case 'utilisateur':
-                            header('Location: user.php');
+                            header('Location: ../quize/jouer/afficher_quiz.php');
                             break;
                         default:
                             // Redirection par défaut

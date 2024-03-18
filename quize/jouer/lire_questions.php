@@ -3,55 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questions du QCM</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Assurez-vous d'ajuster le lien vers votre fichier CSS -->
+    <title>Lire les questions</title>
 </head>
 <body>
     <h1>Questions du QCM</h1>
     <form action="resultat.php" method="post">
-        <div class="questions-container">
-            <?php
-                // Vérification si le paramètre qcm_name est présent dans l'URL
-                if(isset($_GET['qcm_name'])) {
-                    $selected_qcm = $_GET['qcm_name'];
-                    
-                    // Charger le fichier CSV contenant les questions
-                    $qcm_questions = file("../creation-quiz/qcm_questions.csv", FILE_IGNORE_NEW_LINES);
-                    if ($qcm_questions === false) {
-                        die("Erreur lors de la lecture du fichier CSV des questions");
-                    }
-                    
-                    // Parcourir les questions et afficher celles du QCM sélectionné
-                    foreach ($qcm_questions as $qcm_question) {
-                        $question_data = explode(",", $qcm_question);
-                        $qcm_name = $question_data[0];
-                        
-                        // Vérifier si la question appartient au QCM sélectionné
-                        if ($qcm_name === $selected_qcm) {
-                            $question_number = $question_data[1];
-                            $question_text = $question_data[2];
-                            $option1 = $question_data[3];
-                            $option2 = $question_data[4];
-                            $option3 = $question_data[5];
-                            $correct_answer_index = $question_data[6];
-                            
-                            // Afficher la question et les options avec des cases à cocher
-                            echo "<div class='question'>";
-                            echo "<p>$question_text</p>";
-                            echo "<ul>";
-                            echo "<li><input type='radio' name='question_$question_number' value='1'>$option1</li>";
-                            echo "<li><input type='radio' name='question_$question_number' value='2'>$option2</li>";
-                            echo "<li><input type='radio' name='question_$question_number' value='3'>$option3</li>";
-                            echo "</ul>";
-                            echo "</div>";
-                        }
-                    }
-                } else {
-                    echo "<p>Aucun QCM sélectionné.</p>";
+        <?php
+            if(isset($_GET['qcm_name'])) {
+                $qcm_name = $_GET['qcm_name'];
+                $qcm_questions = file("../creation-quiz/qcm_questions.csv", FILE_IGNORE_NEW_LINES);
+                if ($qcm_questions === false) {
+                    die("Erreur lors de la lecture du fichier CSV des questions");
                 }
-            ?>
-        </div>
-        <input type="submit" value="Valider">
+
+                echo "<h2>$qcm_name</h2>";
+                echo "<input type='hidden' name='qcm_name' value='$qcm_name'>";
+                echo "<ol>";
+                foreach ($qcm_questions as $question) {
+                    $data = explode(",", $question);
+                    if ($data[0] === $qcm_name) {
+                        echo "<li>$data[2]</li>";
+                        echo "<input type='hidden' name='question[]' value='{$data[2]}'>";
+                        echo "<input type='radio' name='answer{$data[1]}' value='1'> {$data[3]}<br>";
+                        echo "<input type='radio' name='answer{$data[1]}' value='2'> {$data[4]}<br>";
+                        echo "<input type='radio' name='answer{$data[1]}' value='3'> {$data[5]}<br><br>";
+
+                    }
+                }
+                echo "</ol>";
+                echo "<button type='submit'>Voir le résultat</button>";
+            } else {
+                echo "Aucun QCM sélectionné.";
+            }
+        ?>
     </form>
 </body>
 </html>
