@@ -9,7 +9,7 @@
     <div class="container">
         <h1>Page Utilisateur</h1>
         <a button id="Modifier vos informations" href="modifier_infos.php">Modifier vos informations</a>
-        <button id="accéderQuizBtn">Accéder au Quiz</button>
+        <button id="accéderQuizBtn" href="../quize/jouer/afficher-quiz.php">Accéder au Quiz</button>
         <div id="dashboard">
 
 <?php
