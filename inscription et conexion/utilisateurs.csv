@@ -1,0 +1,6 @@
+Nom,Prenom,Identifiant,Mot_de_passe,Role
+mokrani,maya,maya-mkr,$2y$10$SnsyIjIbD7n14ZujQ3O99OnFe0Rmcl9hqwDIWJlsjHhGdSzA8YwzS,admin
+savouret,anthony,anou,$2y$10$PkjTeHKqgA.y/Ez8h805sOsaKp7JmRUo/X8XLjoVVKQymu9F2.6Ly,ecole
+aksel,aks,akk,$2y$10$pgpmblqMIx0FeiKvsSfo3u0hWHH8dPJcFR2Iszx64d4UkeHNX7rK.,ecole
+kst,omar,omaro,$2y$10$x97l2MON3GUbSnLnr1yskuwg8GGSVjC2U1djVBIK3gZLkonuA2RAy,ecole
+ezaaa,zezefezfe,zefzefez,$2y$10$GDSXyCX.n2FKydzSn4H3/uPlT3RShloHJWqf4DEtk5BjqbTW4j26O,ecole
