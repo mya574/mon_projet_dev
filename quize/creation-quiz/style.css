@@ -24,10 +24,11 @@ input[type="text"] {
 
 #questions_container {
     margin-bottom: 10px;
+    background-color: aqua;
 }
 
 .question {
-    border: 1px solid #ccc;
+    border: 1px solid #f11212;
     padding: 10px;
     margin-bottom: 10px;
 }

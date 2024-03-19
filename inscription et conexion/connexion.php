@@ -19,11 +19,14 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
                             header('Location: admin.php');
                             break;
                         case 'ecole':
-                            header('Location: ../quize/creation-quiz/');
+                            header('Location: ../quize/creation-quiz/ecole.php');
                             break;
                         case 'utilisateur':
                             header('Location: ../quize/jouer/afficher_quiz.php');
                             break;
+                            case 'entreprise':
+                                header('Location: ../quize/creation-quiz/entreprise.php');
+                                break;
                         default:
                             // Redirection par défaut
                             header('Location: index.php');
@@ -69,6 +72,8 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
         <label for="ecole">Ecole</label>
         <input type="radio" id="utilisateur" name="role" value="utilisateur" required>
         <label for="utilisateur">Utilisateur</label>
+        <input type="radio" id="entreprise" name="role" value="entreprise" required>
+        <label for="entreprise">entreprise</label>
         <input type="submit" value="Se connecter">
     </form>
 </div>
