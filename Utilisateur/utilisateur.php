@@ -25,31 +25,3 @@
 
 </body>
 </html>
-
-          <!-- Historique des quiz -->
-          </div>
-    </div>
-<?php
-// Fonction pour lire les données du fichier CSV
-function lireCSV($fichier) {
-    $data = [];
-    if (($handle = fopen($fichier, "r")) !== FALSE) {
-        while (($row = fgetcsv($handle, 1000, ",")) !== FALSE) {
-            $data[] = $row;
-        }
-        fclose($handle);
-    }
-    return $data;
-}
-
-// Chemin vers le fichier CSV contenant l'historique des quiz
-$fichierCSV = '../Utilisateur/historique_quiz.csv';
-
-// Lire les données du fichier CSV
-$historiqueQuiz = lireCSV($fichierCSV);
-
-// Afficher l'historique des quiz dans la dashboard
-foreach ($historiqueQuiz as $quiz) {
-    echo "<p>$quiz[0] - $quiz[1]</p>"; // Assurez-vous que le fichier CSV contient les informations correctes (nom du quiz et date)
-}
-?>

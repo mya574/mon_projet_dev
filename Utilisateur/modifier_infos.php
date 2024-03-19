@@ -14,8 +14,8 @@
             <input type="text" id="nom" name="nom" required><br>
             <label for="prenom">Prénom:</label><br>
             <input type="text" id="prenom" name="prenom" required><br>
-            <label for="email">Adresse Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
+            <label for="identifiant">Adresse Email:</label><br>
+            <input type="identifiant" id="email" name="email" required><br>
             <label for="motdepasse">Mot de Passe:</label><br>
             <input type="password" id="motdepasse" name="motdepasse" required><br>
             <input type="submit" value="Enregistrer">
@@ -28,13 +28,19 @@
 // Récupérer les valeurs du formulaire
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
-$email = $_POST['email'];
+$email = $_POST['identifiant'];
 $motdepasse = $_POST['motdepasse'];
 
 // Mettre à jour les informations dans le fichier CSV (vous devez implémenter cette partie)
+
 // Vous pouvez utiliser des fonctions PHP comme fopen(), fputcsv(), fclose() pour manipuler le fichier CSV
 
 // Rediriger l'utilisateur vers la page utilisateur après la mise à jour
-header("Location: utilisateur.php");
+header("Location: ../Utilisateur/utilisateur.php");
 exit();
+if (ecrireInformationsUtilisateur($fichierCSV, $nouvellesInformations)) {
+    echo "Les informations utilisateur ont été mises à jour avec succès.";
+} else {
+    echo "Une erreur s'est produite lors de la mise à jour des informations utilisateur.";
+}
 ?>
