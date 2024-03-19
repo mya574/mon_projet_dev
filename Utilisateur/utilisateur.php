@@ -12,9 +12,6 @@
         <button id="modifierInfosBtn">Modifier Informations</button>
         <button id="accéderQuizBtn">Accéder au Quiz</button>
         <div id="dashboard">
-            <!-- Historique des quiz -->
-        </div>
-    </div>
     
 <script>
     document.getElementById("modifierInfosBtn").onclick = function () {
@@ -29,7 +26,9 @@
 </body>
 </html>
 
-
+          <!-- Historique des quiz -->
+          </div>
+    </div>
 <?php
 // Fonction pour lire les données du fichier CSV
 function lireCSV($fichier) {
@@ -44,7 +43,7 @@ function lireCSV($fichier) {
 }
 
 // Chemin vers le fichier CSV contenant l'historique des quiz
-$fichierCSV = 'historique_quiz.csv';
+$fichierCSV = '../Utilisateur/historique_quiz.csv';
 
 // Lire les données du fichier CSV
 $historiqueQuiz = lireCSV($fichierCSV);
