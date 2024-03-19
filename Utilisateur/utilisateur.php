@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <h1>Page Utilisateur</h1>
-        <a href="modifier_infos.php">Modifier Informations</a>
+        <a button id="Modifier vos informations" href="modifier_infos.php">Modifier vos informations</a>
         <button id="accéderQuizBtn">Accéder au Quiz</button>
         <div id="dashboard">
 
