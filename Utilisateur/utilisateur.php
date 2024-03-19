@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -8,9 +9,26 @@
 <body>
     <div class="container">
         <h1>Page Utilisateur</h1>
-        <a button id="Modifier vos informations" href="modifier_infos.php">Modifier vos informations</a>
-        <button id="accéderQuizBtn" href="../quize/jouer/afficher-quiz.php">Accéder au Quiz</button>
+        <button id="modifierInfosBtn">Modifier Informations</button>
+        <button id="accéderQuizBtn">Accéder au Quiz</button>
         <div id="dashboard">
+            <!-- Historique des quiz -->
+        </div>
+    </div>
+
+    <script>
+    document.getElementById("modifierInfosBtn").onclick = function () {
+        location.href = "../Utilisateur/modifier_infos.php";
+
+    document.getElementById("accéderQuizBtn").onclick = function () {
+        location.href = "../quiz/jouer/afficher_quiz.php";
+    };
+    </script>
+
+
+</body>
+</html>
+
 
 <?php
 // Fonction pour lire les données du fichier CSV
