@@ -60,19 +60,20 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['identifiant
     <form action="traitement_inscription.php" method="post">
         <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" required>
-        <label for="prenom">Prénom :</label>
+        <label for="prenom"><br><br>Prénom :</label>
         <input type="text" id="prenom" name="prenom" required>
-        <label for="identifiant">Identifiant :</label>
+        <label for="identifiant"><br><br>Identifiant :</label>
         <input type="text" id="identifiant" name="identifiant" required>
-        <label for="mot_de_passe">Mot de passe :</label>
+        <label for="mot_de_passe"><br><br>Mot de passe :</label>
         <input type="password" id="mot_de_passe" name="mot_de_passe" required>
-        <label for="role">Rôle :</label>
+        <label for="role"><br><br>Rôle :</label>
         <input type="radio" id="admin" name="role" value="admin" required>
         <label for="admin">Admin</label>
         <input type="radio" id="ecole" name="role" value="ecole" required>
         <label for="ecole">Ecole</label>
         <input type="radio" id="utilisateur" name="role" value="utilisateur" required>
         <label for="utilisateur">Utilisateur</label>
+        <br><br>
         <input type="submit" value="S'inscrire">
     </form>
 </div>

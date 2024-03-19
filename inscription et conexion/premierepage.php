@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="premierepage.css">
 </head>
 <body>
-    <div class="phrase"><h1>bienvenu sur QUIZZEO</h1></div>
+    <div class="container">
+    <div class="phrase"><h1>bienvenue sur QUIZZEO !</h1></div>
+    <img src="quizzeo-removebg-preview.png">
     <div class="contenu">
         <a class="btn1" href="connexion.php">connexion</a>
         <a class="btn2" href="inscription.php">inscription</a>
-        
     </div>
+</div>
 </body>
 </html>
