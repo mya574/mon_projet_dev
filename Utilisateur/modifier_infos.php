@@ -66,6 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
     // Rediriger l'utilisateur vers la page utilisateur après la mise à jour
-    header("Location:../Utilisateur/utilisateur.php");
-    exit();
+    //header("Location:./utilisateur.php");
+    //exit();
 ?>

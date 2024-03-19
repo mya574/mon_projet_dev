@@ -15,7 +15,7 @@
     
 <script>
     document.getElementById("modifierInfosBtn").onclick = function () {
-        location.href = "../Utilisateur/modifier_infos.php";
+        location.href = "./modifier_infos.php";
     };
 
     document.getElementById("accéderQuizBtn").onclick = function () {
