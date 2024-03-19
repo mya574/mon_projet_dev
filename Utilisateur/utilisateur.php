@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -9,17 +8,9 @@
 <body>
     <div class="container">
         <h1>Page Utilisateur</h1>
-    <div class="button">
-        <button id="modifierInfosBtn">Modifier Informations</button>
+        <a href="modifier_infos.php">Modifier Informations</a>
         <button id="accéderQuizBtn">Accéder au Quiz</button>
         <div id="dashboard">
-            <!-- Historique des quiz -->
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
 
 <?php
 // Fonction pour lire les données du fichier CSV
