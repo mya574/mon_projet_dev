@@ -7,30 +7,42 @@ h1 {
 }
 
 form {
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 input[type="text"] {
-    width: 100%;
+    width: 90%;
     padding: 5px;
     margin-bottom: 10px;
+    border-radius: 20px;
 }
 
 #questions_container {
     margin-bottom: 10px;
     background-color: aqua;
+    border-radius: 20px;
+}
+#questions_container button{
+    padding: 10px 20px;
+    background-color: #e33030;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: 300px;
+    border-radius: 20px;
 }
 
 .question {
-    border: 1px solid #f11212;
+    border: 3px solid #000000;
     padding: 10px;
     margin-bottom: 10px;
+    border-radius: 20px;
 }
 
 button {
@@ -39,6 +51,9 @@ button {
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 20px;
+    margin-left: 100px;
+    
 }
 
 button:hover {
