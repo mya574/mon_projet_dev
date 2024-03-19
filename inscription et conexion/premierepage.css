@@ -1,0 +1,47 @@
+body{
+    position: relative;
+    width: 100%;    /*l'espace que l'elément occupe*/
+    min-height: 100vh; /*hauteur*/
+    display:flex;
+    justify-content:center;
+    align-items: center; 
+    top: 10;
+    background-image: url(image_de_fond.jpg);
+    background-size: cover; /*pour que l'image couvre*/
+}
+.phrase{
+    display:flex;
+    right: 400px;
+}
+.btn1{
+    font-size:1em ;
+    color:white ; /*couleur et taille de l'ecriture de reserver*/
+    background: #fb911f;
+    padding: 10px 20px; /*largeure et longeure des boxe */
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+.btn2{
+    font-size:1em ;
+    color:white ;
+    background: #584299;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+.btn1:hover{
+    letter-spacing: 4px; /*animation du bouton*/
+}
+.btn2:hover{
+    letter-spacing: 4px; /*animation du bouton*/
+}
