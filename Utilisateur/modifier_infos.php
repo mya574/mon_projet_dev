@@ -14,8 +14,8 @@
             <input type="text" id="nom" name="nom" required><br>
             <label for="prenom">Prénom:</label><br>
             <input type="text" id="prenom" name="prenom" required><br>
-            <label for="identifiant">Adresse Email:</label><br>
-            <input type="identifiant" id="email" name="email" required><br>
+            <label for="identifiant">Identifiant:</label><br>
+            <input type="identifiant" id="identifiant" name="identifiant" required><br>
             <label for="motdepasse">Mot de Passe:</label><br>
             <input type="password" id="motdepasse" name="motdepasse" required><br>
             <input type="submit" value="Enregistrer">
@@ -25,22 +25,47 @@
 </html>
 
 <?php
-// Récupérer les valeurs du formulaire
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$email = $_POST['identifiant'];
-$motdepasse = $_POST['motdepasse'];
+include_once 'fonction.php';
 
-// Mettre à jour les informations dans le fichier CSV (vous devez implémenter cette partie)
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupérer les données du formulaire
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $identifiant = $_POST['identifiant'];
+    $motdepasse = $_POST['motdepasse'];
 
-// Vous pouvez utiliser des fonctions PHP comme fopen(), fputcsv(), fclose() pour manipuler le fichier CSV
+    // Créer un tableau avec les nouvelles informations
+    $nouvellesInformations = [$nom, $prenom, $identifiant, $motdepasse];
 
-// Rediriger l'utilisateur vers la page utilisateur après la mise à jour
-header("Location: ../Utilisateur/utilisateur.php");
-exit();
-if (ecrireInformationsUtilisateur($fichierCSV, $nouvellesInformations)) {
-    echo "Les informations utilisateur ont été mises à jour avec succès.";
-} else {
-    echo "Une erreur s'est produite lors de la mise à jour des informations utilisateur.";
+    // Chemin vers le fichier CSV contenant les informations utilisateur
+    $fichierCSV = '../inscription et conexion/utilisateur.csv';
+
+    // Lire les anciennes informations utilisateur
+    $anciennesInformations = lireInformationsUtilisateur($fichierCSV);
+
+    // Trouver l'index de l'utilisateur dans le tableau des anciennes informations
+    $indexUtilisateur = array_search($nom, array_column($anciennesInformations, 2));
+
+    // Vérifier si l'utilisateur existe dans le fichier CSV
+    if ($indexUtilisateur !== false) {
+        // Mettre à jour les informations de l'utilisateur
+        $anciennesInformations[$indexUtilisateur] = $nouvellesInformations;
+
+        // Écrire les nouvelles informations dans le fichier CSV
+        $handle = fopen($fichierCSV, "w");
+        foreach ($anciennesInformations as $ligne) {
+            fputcsv($handle, $ligne);
+        }
+        fclose($handle);
+
+        echo "Les informations utilisateur ont été mises à jour avec succès.";
+    } else {
+        echo "Utilisateur introuvable.";
+    }
+
 }
+
+    // Rediriger l'utilisateur vers la page utilisateur après la mise à jour
+    header("Location:../Utilisateur/utilisateur.php");
+    exit();
 ?>
