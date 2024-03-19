@@ -15,16 +15,16 @@
             <!-- Historique des quiz -->
         </div>
     </div>
-
-    <script>
+    
+<script>
     document.getElementById("modifierInfosBtn").onclick = function () {
         location.href = "../Utilisateur/modifier_infos.php";
+    };
 
     document.getElementById("accéderQuizBtn").onclick = function () {
-        location.href = "../quiz/jouer/afficher_quiz.php";
+        location.href = "../quize/jouer/afficher_quiz.php";
     };
-    </script>
-
+</script>
 
 </body>
 </html>
