@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Page Utilisateur</h1>
-        <button id="modifierInfosBtn">Modifier Informations</button>
+        <button id="modifierInfosBtn">Profil</button>
         <button id="accéderQuizBtn">Accéder au Quiz</button>
         <div id="dashboard">
     
