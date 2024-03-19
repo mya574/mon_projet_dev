@@ -23,3 +23,18 @@
     </div>
 </body>
 </html>
+
+<?php
+// Récupérer les valeurs du formulaire
+$nom = $_POST['nom'];
+$prenom = $_POST['prenom'];
+$email = $_POST['email'];
+$motdepasse = $_POST['motdepasse'];
+
+// Mettre à jour les informations dans le fichier CSV (vous devez implémenter cette partie)
+// Vous pouvez utiliser des fonctions PHP comme fopen(), fputcsv(), fclose() pour manipuler le fichier CSV
+
+// Rediriger l'utilisateur vers la page utilisateur après la mise à jour
+header("Location: utilisateur.php");
+exit();
+?>
