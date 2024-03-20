@@ -73,6 +73,8 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['identifiant
         <label for="ecole">Ecole</label>
         <input type="radio" id="utilisateur" name="role" value="utilisateur" required>
         <label for="utilisateur">Utilisateur</label>
+        <input type="radio" id="entreprise" name="role" value="entreprise" required>
+        <label for="entreprise">entreprise</label>
         <br><br>
         <input type="submit" value="S'inscrire">
     </form>
