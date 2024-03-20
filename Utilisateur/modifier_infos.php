@@ -2,7 +2,7 @@
 // Fonction pour lire les informations utilisateur depuis un fichier CSV
 function lireInformationsUtilisateur($fichier) {
     $informations = [];
-    if (($handle = fopen($fichier, "r")) !== FALSE) {
+    if (($handle = fopen($fichierCSV, "r")) !== FALSE) {
         while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
             $informations[] = $data;
         }
@@ -25,7 +25,7 @@ function ecrireInformationsUtilisateur($fichier, $nouvellesInformations) {
 }
 
 // Chemin vers le fichier CSV contenant les informations utilisateur
-$fichierCSV = '../inscription et conexion/utilisateur.csv';
+$fichierCSV = '../inscription et conexion/utilisateurs.csv';
 
 // Charger les informations utilisateur existantes
 $informationsUtilisateur = lireInformationsUtilisateur($fichierCSV);
@@ -33,7 +33,7 @@ $informationsUtilisateur = lireInformationsUtilisateur($fichierCSV);
 // Définir des variables par défaut pour les champs du formulaire
 $nom = $informationsUtilisateur[0];
 $prenom = $informationsUtilisateur[1];
-$email = $informationsUtilisateur[2];
+$identifiant = $informationsUtilisateur[2];
 $motdepasse = $informationsUtilisateur[3];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
