@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="navbar">
+        <div class="logo">
+            <img src="quizzeo-removebg-preview.png" alt="Logo">
+        </div>
+        <div class="menu">
+            <a href="entreprise2.php">mes quizes</a>
+            <a href="entreprise.php">cree</a>
+            <a href="../inscription et conexion/connexion.php">Deconnexion</a>
+        </div>
+    </div>
+ <div class="tout">
     <h1>Créateur de QCM</h1>
     <form action="create_qcm.php" method="post">
         <label for="qcm_name">Nom du QCM :</label>
@@ -31,11 +42,11 @@
                 <button type="button" onclick="removeQuestion(this)">Supprimer la question</button>
             </div>
         </div>
-        <button type="button" onclick="addQuestion()">Ajouter une question</button>
+        <button  class="btn1" type="button" onclick="addQuestion()">Ajouter une question</button>
         <br><br>
-        <button type="submit">Créer QCM</button>
+        <button  class="btn3"type="submit">Créer QCM</button>
     </form>
-
+    </div>
     <script>
         function addQuestion() {
             var container = document.getElementById("questions_container");

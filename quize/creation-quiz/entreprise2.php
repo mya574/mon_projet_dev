@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des QCM de l'école</title>
     <link rel="stylesheet" href="designe.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="navbar">
+        <div class="logo">
+            <img src="quizzeo-removebg-preview.png" alt="Logo">
+        </div>
+        <div class="menu">
+            <a href="entreprise2.php">mes quizes</a>
+            <a href="entreprise.php">cree</a>
+            <a href="../inscription et conexion/connexion.php">Deconnexion</a>
+        </div>
+    </div>
     <div class="container">
         <h1>Liste des QCM de l'école</h1>
         <table>
@@ -54,7 +65,7 @@
             </tbody>
         </table>
     </div>
-    <a href="entreprise.php">ajouter un quize</a>
+    <a  class="btn5" href="entreprise.php">ajouter un quize</a>
 </body>
 </html>
 

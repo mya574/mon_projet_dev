@@ -1,6 +1,6 @@
 <?php
-session_start(); // Démarrez la session pour accéder aux informations de l'utilisateur connecté
-
+session_start(); 
+//on recupere les information entrer dans notr formulaire
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $qcm_name = $_POST['qcm_name'];
     $questions = $_POST['question'];
@@ -9,16 +9,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $options3 = $_POST['option3'];
     $correct_answers = $_POST['correct_answer'];
 
-    // Vérifiez si l'utilisateur est connecté et récupérez son rôle
+    // Vérifiez si l'utilisateur est connecté grace a session  et on récupérez son rôle
     if (isset($_SESSION['role'])) {
         $role = $_SESSION['role'];
     } else {
         // Redirigez l'utilisateur vers la page de connexion s'il n'est pas connecté
-        header('Location: index.php');
-        exit(); // Arrêtez le script après la redirection
+        header('Location: ../../inscription et conexion/connexion.php');
+        exit(); // stoper l'execution du script
     }
 
-    // Ouvrir le fichier CSV pour ajouter les questions
+    // Ouvrir le fichier CSV pour ajouter les questions en mode append
     $qcm_questions_file = fopen("qcm_questions.csv", "a");
     if ($qcm_questions_file) {
         // Écrire les questions pour le nouveau QCM avec le nom du créateur
