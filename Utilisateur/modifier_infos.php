@@ -1,3 +1,61 @@
+<?php
+// Fonction pour lire les informations utilisateur depuis un fichier CSV
+function lireInformationsUtilisateur($fichier) {
+    $informations = [];
+    if (($handle = fopen($fichier, "r")) !== FALSE) {
+        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+            $informations[] = $data;
+        }
+        fclose($handle);
+    }
+    return $informations;
+}
+
+// Fonction pour écrire les informations utilisateur dans un fichier CSV
+function ecrireInformationsUtilisateur($fichier, $nouvellesInformations) {
+    if (($handle = fopen($fichier, "w")) !== FALSE) {
+        foreach ($nouvellesInformations as $ligne) {
+            fputcsv($handle, $ligne);
+        }
+        fclose($handle);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Chemin vers le fichier CSV contenant les informations utilisateur
+$fichierCSV = '../inscription et conexion/utilisateur.csv';
+
+// Charger les informations utilisateur existantes
+$informationsUtilisateur = lireInformationsUtilisateur($fichierCSV);
+
+// Définir des variables par défaut pour les champs du formulaire
+$nom = $informationsUtilisateur[0];
+$prenom = $informationsUtilisateur[1];
+$email = $informationsUtilisateur[2];
+$motdepasse = $informationsUtilisateur[3];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupérer les nouvelles données du formulaire
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $identifiant = $_POST['identifiant'];
+    $motdepasse = $_POST['motdepasse'];
+
+    // Mettre à jour les informations utilisateur dans le tableau
+    $informationsUtilisateur = [$nom, $prenom, $identifiant, $motdepasse];
+
+    // Écrire les nouvelles informations dans le fichier CSV
+    if (ecrireInformationsUtilisateur($fichierCSV, $informationsUtilisateur)) {
+        echo "Les informations utilisateur ont été mises à jour avec succès.";
+    } else {
+        echo "Une erreur s'est produite lors de la mise à jour des informations utilisateur.";
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,7 +66,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Modifier Informations Utilisateur</h1>
+        <h1>Modifier vos informations </h1>
         <form action="traitement_infos.php" method="post">
             <label for="nom">Nom:</label><br>
             <input type="text" id="nom" name="nom" required><br>
@@ -21,51 +79,6 @@
             <input type="submit" value="Enregistrer">
         </form>
     </div>
+
 </body>
 </html>
-
-<?php
-include_once 'fonction.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les données du formulaire
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $identifiant = $_POST['identifiant'];
-    $motdepasse = $_POST['motdepasse'];
-
-    // Créer un tableau avec les nouvelles informations
-    $nouvellesInformations = [$nom, $prenom, $identifiant, $motdepasse];
-
-    // Chemin vers le fichier CSV contenant les informations utilisateur
-    $fichierCSV = '../inscription et conexion/utilisateur.csv';
-
-    // Lire les anciennes informations utilisateur
-    $anciennesInformations = lireInformationsUtilisateur($fichierCSV);
-
-    // Trouver l'index de l'utilisateur dans le tableau des anciennes informations
-    $indexUtilisateur = array_search($nom, array_column($anciennesInformations, 2));
-
-    // Vérifier si l'utilisateur existe dans le fichier CSV
-    if ($indexUtilisateur !== false) {
-        // Mettre à jour les informations de l'utilisateur
-        $anciennesInformations[$indexUtilisateur] = $nouvellesInformations;
-
-        // Écrire les nouvelles informations dans le fichier CSV
-        $handle = fopen($fichierCSV, "w");
-        foreach ($anciennesInformations as $ligne) {
-            fputcsv($handle, $ligne);
-        }
-        fclose($handle);
-
-        echo "Les informations utilisateur ont été mises à jour avec succès.";
-    } else {
-        echo "Utilisateur introuvable.";
-    }
-
-}
-
-    // Rediriger l'utilisateur vers la page utilisateur après la mise à jour
-    //header("Location:./utilisateur.php");
-    //exit();
-?>
