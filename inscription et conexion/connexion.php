@@ -70,7 +70,7 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
         <input type="radio" id="utilisateur" name="role" value="utilisateur" required>
         <label for="utilisateur">Utilisateur</label>
         <input type="radio" id="entreprise" name="role" value="entreprise" required>
-        <label for="entreprise">entreprise</label>
+        <label for="entreprise">Entreprise</label>
         <input type="submit" value="Se connecter">
     </form>
 </div>
