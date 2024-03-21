@@ -13,27 +13,8 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
                     $_SESSION['identifiant'] = $_POST['identifiant'];
                     $_SESSION['role'] = $_POST['role'];
                     fclose($file);
-                    // Redirection en fonction du rôle
-                    switch ($_POST['role']) {
-                        case 'admin':
-                            header('Location: admin.php');
-                            break;
-                        case 'ecole':
-                            header('Location: ../quize/creation-quiz/ecole.php');
-                            break;
-                        case 'utilisateur':
-                            header('Location: ../quize/jouer/afficher_quiz.php');
-                            break;
-                        case 'entreprise':
-                            header('Location: ../quize/creation-quiz/entreprise.php');
-                            break;
-                        default:
-                            // Redirection par défaut
-                            header('Location: index.php');
-                            break;
-                    }
-                    exit(); // Terminer le script après la redirection
-                } else {
+                    
+                }else {
                     $error = "Le mot de passe est incorrect.";
                 }
             } else {
@@ -66,6 +47,7 @@ if (isset($_POST['submit'])) {
         if ($data->success) {
             // This message will only be displayed when reCAPTCHA validation succeeds
             echo "<h2>Recaptcha successfully resolved, Data Sent</h2>";
+            header('Location: connexion.php');
             // Here you can proceed with redirection if necessary
         } else {
             echo "<h4>Please try again to solve the captcha</h4>";
