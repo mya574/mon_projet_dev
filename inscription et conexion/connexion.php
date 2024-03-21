@@ -24,9 +24,9 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
                         case 'utilisateur':
                             header('Location: ../quize/jouer/afficher_quiz.php');
                             break;
-                            case 'entreprise':
-                                header('Location: ../quize/creation-quiz/entreprise.php');
-                                break;
+                        case 'entreprise':
+                            header('Location: ../quize/creation-quiz/entreprise.php');
+                            break;
                         default:
                             // Redirection par défaut
                             header('Location: index.php');
@@ -49,15 +49,6 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
 
 // Check if the form for sending additional data is submitted
 if (isset($_POST['submit'])) {
-    // Check if first name field is empty
-    if (empty($_POST['fname'])) {
-        echo "<h4>Veuillez entrer votre prénom</h4>";
-    }
-
-    // Check if last name field is empty
-    if (empty($_POST['lname'])) {
-        echo "<h4>Veuillez entrer votre nom</h4>";
-    }
 
     // Check if reCAPTCHA response is empty
     if (empty($_POST['g-recaptcha-response'])) {
@@ -75,13 +66,13 @@ if (isset($_POST['submit'])) {
         if ($data->success) {
             // This message will only be displayed when reCAPTCHA validation succeeds
             echo "<h2>Recaptcha successfully resolved, Data Sent</h2>";
-        } else 
-        {
+            // Here you can proceed with redirection if necessary
+        } else {
             echo "<h4>Please try again to solve the captcha</h4>";
+            // Here you can handle the case where reCAPTCHA is not validated
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -102,6 +93,7 @@ if (isset($_POST['submit'])) {
     <form action="" method="post">
         <label for="identifiant">Identifiant :</label>
         <input type="text" id="identifiant" name="identifiant" required>
+        <br><br>
         <label for="mot_de_passe">Mot de passe :</label>
         <input type="password" id="mot_de_passe" name="mot_de_passe" required>
         <label for="role"><br><br>Rôle :</label>
@@ -110,21 +102,18 @@ if (isset($_POST['submit'])) {
         <input type="radio" id="ecole" name="role" value="ecole" required>
         <label for="ecole">Ecole</label>
         <input type="radio" id="utilisateur" name="role" value="utilisateur" required>
-        <label for="utilisateur">Utilisateur<br><br></label>
+        <label for="utilisateur">Utilisateur</label>
         <input type="radio" id="entreprise" name="role" value="entreprise" required>
         <label for="entreprise">entreprise</label>
-        <input type="submit" value="Se connecter" class="connect">
         <br><br>
     </form>
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-        Prénom <input type="text" name="fname"><br><br>
-        Nom <input type="text" name="lname"><br><br>
+    <form method="post" action="">
         <!-- reCAPTCHA challenge -->
         <div class = "rca">
-        <div class="g-recaptcha" data-sitekey="6Ldx6ZkpAAAAAIF7eL6SKblN7Ft_FJtA7E8Oqyw_"></div>
+            <div class="g-recaptcha" data-sitekey="6Ldx6ZkpAAAAAIF7eL6SKblN7Ft_FJtA7E8Oqyw_"></div>
+        </div>
         <br>
-        <input type="submit" name="submit" value="Vérifier" class="check">
-    </div>
+        <input type="submit" name="submit" value="Se connecter" class="connect">
     </form>
 </div>
 </body>

@@ -1,44 +1,76 @@
 <?php
-if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POST['role'])) {
+session_start();
+$error = "";
+
+if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POST['role'])) {
     $file_name = 'utilisateurs.csv';
+    $file = fopen($file_name, 'r');
 
-    // Vérifier si l'utilisateur est en train de s'inscrire en tant qu'administrateur
-    if ($_POST['role'] === 'admin') {
-        // Ouvrir le fichier CSV et rechercher s'il existe déjà un compte administrateur
-        $file = fopen($file_name, 'r');
-        $admin_exists = false;
-
+    if ($file) {
         while (($line = fgetcsv($file)) !== false) {
-            if ($line[4] === 'admin') {
-                $admin_exists = true;
-                break;
+            if (isset($line[2]) && isset($line[3]) && isset($line[4]) && $line[2] === $_POST['identifiant'] && $line[4] === $_POST['role']) {
+                if (password_verify($_POST['mot_de_passe'], $line[3])) {
+                    $_SESSION['identifiant'] = $_POST['identifiant'];
+                    $_SESSION['role'] = $_POST['role'];
+                    fclose($file);
+                    // Redirection en fonction du rôle
+                    switch ($_POST['role']) {
+                        case 'admin':
+                            header('Location: admin.php');
+                            break;
+                        case 'ecole':
+                            header('Location: ../quize/creation-quiz/ecole.php');
+                            break;
+                        case 'utilisateur':
+                            header('Location: ../quize/jouer/afficher_quiz.php');
+                            break;
+                        case 'entreprise':
+                            header('Location: ../quize/creation-quiz/entreprise.php');
+                            break;
+                        default:
+                            // Redirection par défaut
+                            header('Location: index.php');
+                            break;
+                    }
+                    exit(); // Terminer le script après la redirection
+                } else {
+                    $error = "Le mot de passe est incorrect.";
+                }
+            } else {
+                $error = "L'identifiant ou le rôle n'existe pas.";
             }
         }
-
         fclose($file);
+    } else {
+        $error = "Erreur lors de l'ouverture du fichier.";
+    }
+}
 
-        // Si un compte administrateur existe déjà, afficher un message d'erreur
-        if ($admin_exists) {
-            $error = "Il ne peut y avoir qu'un seul administrateur. Veuillez choisir un autre rôle.";
-        }
+
+// Check if the form for sending additional data is submitted
+if (isset($_POST['submit'])) {
+
+    // Check if reCAPTCHA response is empty
+    if (empty($_POST['g-recaptcha-response'])) {
+        echo "<h4>Résoudre le captcha</h4>";
     }
 
-    // Si aucun compte administrateur n'existe et que le rôle n'est pas admin, procéder à l'inscription
-    if (!isset($error)) {
-        $file = fopen($file_name, 'a');
+    // Validate reCAPTCHA
+    if (!empty($_POST["g-recaptcha-response"])) {
+        $secret = "6Ldx6ZkpAAAAABKP1aR4TKPd3S3-ZknB9qYdvH8s";
 
-        if (filesize($file_name) == 0) {
-            fputcsv($file, ['Nom', 'Prenom', 'Identifiant', 'Mot_de_passe', 'Role']);
+        $response = file_get_contents('https://google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_POST['g-recaptcha-response']);
+
+        $data = json_decode($response);
+
+        if ($data->success) {
+            // This message will only be displayed when reCAPTCHA validation succeeds
+            echo "<h2>Recaptcha successfully resolved, Data Sent</h2>";
+            // Here you can proceed with redirection if necessary
+        } else {
+            echo "<h4>Please try again to solve the captcha</h4>";
+            // Here you can handle the case where reCAPTCHA is not validated
         }
-
-        $password_hash = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
-
-        fputcsv($file, [$_POST['nom'], $_POST['prenom'], $_POST['identifiant'], $password_hash, $_POST['role']]);
-
-        fclose($file);
-
-        header('Location: connexion.php');
-        exit(); // Terminer le script après la redirection
     }
 }
 ?>
@@ -50,6 +82,7 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['identifiant
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
     <link rel="stylesheet" href="inscription.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 <div class="container">
@@ -76,7 +109,14 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['identifiant
         <input type="radio" id="entreprise" name="role" value="entreprise" required>
         <label for="entreprise">entreprise</label>
         <br><br>
-        <input type="submit" value="S'inscrire">
+    </form>
+    <form method="post" action="">
+        <!-- reCAPTCHA challenge -->
+        <div class = "rca">
+            <div class="g-recaptcha" data-sitekey="6Ldx6ZkpAAAAAIF7eL6SKblN7Ft_FJtA7E8Oqyw_"></div>
+        </div>
+        <br>
+        <input type="submit" name="submit" value="S'inscrire" id="button">
     </form>
 </div>
 </body>

@@ -1,0 +1,17 @@
+
+.container{
+    text-align: center;
+    max-width: 800px;
+}
+
+body {
+    background-image: url("image_de_fond.jpg");
+    background-size: cover; /*pour que l'image couvre*/
+    display: flex;
+    justify-content: center; /* Centre l'élément horizontalement */
+    align-items: center; /* Centre l'élément verticalement */
+    height: 100vh; /* Utilise la hauteur de la fenêtre pour centrer verticalement */
+    margin: 0; /* Assure qu'il n'y a pas de marge externe */
+}
+
+
