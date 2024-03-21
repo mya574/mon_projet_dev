@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lire les questions</title>
+    <link rel="stylesheet" href="lire_question.css">
 </head>
 <body>
-    <h1>Questions du QCM</h1>
+    <h1>Questionnaire</h1>
     <form action="resultat.php" method="post">
         <?php
             if(isset($_GET['qcm_name'])) {

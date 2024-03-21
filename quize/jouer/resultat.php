@@ -1,14 +1,13 @@
-<?php
-var_dump($_POST);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Résultat du QCM</title>
+    <link rel="stylesheet" href="resulta.css">
 </head>
 <body>
+ <div class="contenu">
     <h1>Résultat du QCM</h1>
     <?php
         if(isset($_POST['qcm_name'])) {
@@ -38,5 +37,6 @@ var_dump($_POST);
             echo "Aucune donnée de QCM reçue.";
         }
     ?>
+ </div>
 </body>
 </html>

@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #555;
+    padding: 200px;
+}
+
+p.score {
+    font-weight: bold;
+}
+.contenu {
+    background-color: aqua;
+    padding: 20px; /* Reduced padding for better appearance */
+    width: 30%; /* Changed width to 50% of the viewport */
+    height: 10%;
+    margin: 100px auto; /* Center horizontally and provide top margin */
+    border-radius: 20px; /* Changed border-radius value */
+    box-shadow: 2px 3px 4px black;
+}
+

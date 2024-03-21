@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des QCM</title>
     <link rel="stylesheet" href="afficher_quiz.css">
+    <link rel="stylesheet" href="afficher_quiz_nav.css">
 </head>
 <body>
-    <h1>Liste des QCM</h1>
+<div class="navbar">
+        <div class="logo">
+            <img src="../creation-quiz/quizzeo-removebg-preview.png" alt="Logo">
+        </div>
+        <div class="menu">
+            <a href="ecole2.php">mes quizes</a>
+            <a href="ecole.php">cree</a>
+            <a href="../../inscription et conexion/connexion.php">Deconnexion</a>
+        </div>
+</div>   
+    <h1>A vous de jouer</h1>
     <ul>
         <?php
             $qcm_names = file("../creation-quiz/qcm_names.csv", FILE_IGNORE_NEW_LINES);
