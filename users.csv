@@ -1,0 +1,4 @@
+id,nom,prenom,email,role,actif
+1,Admin,Admin,admin@example.com,admin,1
+2,Utilisateur,Utilisateur,user@example.com,user,1
+3,John,Doe,john.doe@example.com,user,1
