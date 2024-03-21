@@ -22,7 +22,7 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
                             header('Location: ../quize/creation-quiz/ecole.php');
                             break;
                         case 'utilisateur':
-                            header('Location: user.php');
+                            header('Location: ../Utilisateur/utilisateur.php');
                             break;
                         default:
                             // Redirection par défaut
