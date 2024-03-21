@@ -110,10 +110,9 @@ if (isset($_POST['submit'])) {
         <input type="radio" id="ecole" name="role" value="ecole" required>
         <label for="ecole">Ecole</label>
         <input type="radio" id="utilisateur" name="role" value="utilisateur" required>
-        <label for="utilisateur">Utilisateur<br><br></label>
+        <label for="utilisateur">Utilisateur</label>
         <input type="radio" id="entreprise" name="role" value="entreprise" required>
         <label for="entreprise">entreprise</label>
-        <input type="submit" value="Se connecter" class="connect">
         <br><br>
     </form>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
@@ -122,9 +121,10 @@ if (isset($_POST['submit'])) {
         <!-- reCAPTCHA challenge -->
         <div class = "rca">
         <div class="g-recaptcha" data-sitekey="6Ldx6ZkpAAAAAIF7eL6SKblN7Ft_FJtA7E8Oqyw_"></div>
+        </div>
         <br>
         <input type="submit" name="submit" value="Vérifier" class="check">
-    </div>
+        <input type="submit" value="Se connecter" class="connect">
     </form>
 </div>
 </body>

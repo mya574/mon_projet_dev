@@ -9,3 +9,6 @@ mokrani,maya,moi,$2y$10$vbX6JKSwN9oE1DtmSfVKCOzupw/Pgmuj0pnAR5viTWcMwQGyiCNqK,en
 yaya,yaya,yaya,$2y$10$4OXcHL8UjhBwO9Im.BdO4.BTFlDqvtKczihkRN3XAkdEgbHPGkE6G,ecole
 mokrani,maya,salut,$2y$10$KYmFC/IeqLz4ZmVN.xTLKOI45.4n4bbQG1F5gdQinOZgUEj.yVf12,entreprise
 ezaaa,zezefezfe,zefzefez,$2y$10$GDSXyCX.n2FKydzSn4H3/uPlT3RShloHJWqf4DEtk5BjqbTW4j26O,ecole
+anthony,savouret,6887485634536,$2y$10$zaFAvfEplRRNo22Wc6qewexlU3snptCSifTqPtWRj/SG2SfaM76wy,entreprise
+sffrsdfs,svfsdvdrfs,6887485634536,$2y$10$ECCucALhxydeVBpQpJ.1ZurlC/.UvGBCuio6SbAnxsVMyFRAtFBnC,utilisateur
+$_SESSION["role"] = "admin";

@@ -12,5 +12,22 @@
 body{
     background-image: url("image_de_fond.jpg");
     background-size: cover; /*pour que l'image couvre*/
-    background-repeat: no-repeat;
+}
+
+#button{
+    font-size:1em ;
+    color:white ; /*couleur et taille de l'ecriture de reserver*/
+    background: #fbb21f;
+    padding: 10px 20px; /*largeure et longeure des boxe */
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+
+#button:hover{
+    letter-spacing: 4px; /*animation du bouton*/
 }

@@ -1,7 +1,6 @@
 body{
     position: relative;
     width: 100%;    /*l'espace que l'elément occupe*/
-    min-height: 10vh; /*hauteur*/
     display:flex;
     justify-content:center;
     align-items: center; 
@@ -27,15 +26,16 @@ body{
     border-color: black;
     background-color: rgba(238, 238, 238, 0.69);
     width:600px;
-    height: 3px;
+    height: 300px;
     justify-content: center;
     justify-self: center;
+    margin-top:15%;
 }
 
 .btn1{
     font-size:1em ;
     color:white ; /*couleur et taille de l'ecriture de reserver*/
-    background: #fb911f;
+    background: #fbb21f;
     padding: 10px 20px; /*largeure et longeure des boxe */
     display: inline-block;
     margin-top: 20px;
@@ -48,13 +48,13 @@ body{
 .btn2{
     font-size:1em ;
     color:white ;
-    background: #584299;
+    background: #956ae0;
     padding: 10px 25px;
     display: inline-block;
     margin-top: 20px;
     text-transform: uppercase;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     transition: 0.5s;
     margin-left: 12px;
     margin-right:10px;

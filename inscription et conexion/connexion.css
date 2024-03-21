@@ -1,7 +1,6 @@
 body{
     background-image: url("image_de_fond.jpg");
     background-size: cover; /*pour que l'image couvre*/
-    background-repeat: no-repeat;
 }
 
 .container{
@@ -13,7 +12,7 @@ body{
     margin-right:auto;
     margin-top:10%;
     width:600px;
-    height: 20vh;
+    height: 45vh;
     justify-content: center;
     justify-items: center;
 }
@@ -26,7 +25,7 @@ body{
 .connect{
     font-size:1em ;
     color:white ; /*couleur et taille de l'ecriture de reserver*/
-    background: #fb911f;
+    background: #ff5f5f;
     padding: 10px 20px; /*largeure et longeure des boxe */
     display: inline-block;
     margin-top: 20px;
@@ -40,7 +39,7 @@ body{
 .check{
     font-size:1em ;
     color:white ;
-    background: #584299;
+    background: #956ae0;
     padding: 10px 25px;
     display: inline-block;
     margin-top: 20px;
@@ -52,9 +51,9 @@ body{
     margin-right:10px;
 }
 
-.form.connect:hover{
+.connect:hover{
     letter-spacing: 4px; /*animation du bouton*/
 }
-.form.check:hover{
+.check:hover{
     letter-spacing: 4px; /*animation du bouton*/
 }
