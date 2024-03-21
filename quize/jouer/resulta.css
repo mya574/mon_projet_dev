@@ -19,11 +19,11 @@ p.score {
 }
 .contenu {
     background-color: aqua;
-    padding: 20px; /* Reduced padding for better appearance */
-    width: 30%; /* Changed width to 50% of the viewport */
-    height: 10%;
-    margin: 100px auto; /* Center horizontally and provide top margin */
-    border-radius: 20px; /* Changed border-radius value */
+    padding: 20px; 
+    width: 30%; 
+    height: 350px;
+    margin: 100px auto; 
+    border-radius: 20px; 
     box-shadow: 2px 3px 4px black;
 }
 
