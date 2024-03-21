@@ -19,6 +19,13 @@
             <input type="identifiant" id="identifiant" name="identifiant" required><br>
             <label for="motdepasse">Mot de Passe:</label><br>
             <input type="password" id="motdepasse" name="motdepasse" required><br>
+            <label for="role">Rôle:</label>
+            <input type="radio" id="admin" name="role" value="admin" required>
+            <label for="admin">Admin</label>
+            <input type="radio" id="ecole" name="role" value="ecole" required>
+            <label for="ecole">Ecole</label>
+            <input type="radio" id="utilisateur" name="role" value="utilisateur" required>
+            <label for="utilisateur">Utilisateur</label><br>
             <input type="submit" value="Enregistrer">
         </form>
     </div>
