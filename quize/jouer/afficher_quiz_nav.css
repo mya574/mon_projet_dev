@@ -1,0 +1,34 @@
+.navbar {
+    overflow: hidden; /* Permet de cacher le contenu qui dépasse de la barre de navigation */
+    background-color: #c626f73e;
+}
+
+/* Style du logo */
+.logo {
+    float: left; /* Faire flotter le logo à gauche */
+    width: 300px;
+}
+
+/* Style des liens de navigation */
+.menu {
+    float: right; /* Faire flotter le menu à droite */
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Style des liens de la barre de navigation */
+.navbar a {
+    display: block; /* Afficher les liens en bloc */
+    color: #080707; /* Couleur du texte des liens */
+    text-align: center; /* Centrer le texte des liens */
+    padding: 32px 20px; /* Espacement intérieur des liens */
+    text-decoration: none; /* Supprimer la décoration des liens */
+}
+
+/* Style des liens de la barre de navigation au survol */
+.navbar a:hover {
+    background-color: #ddd; /* Couleur de fond des liens au survol */
+    color: black; /* Couleur du texte des liens au survol */
+}
+

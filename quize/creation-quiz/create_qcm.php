@@ -1,4 +1,6 @@
 <?php
+session_start(); 
+//on recupere les information entrer dans notr formulaire
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $qcm_name = $_POST['qcm_name'];
     $questions = $_POST['question'];
@@ -7,12 +9,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $options3 = $_POST['option3'];
     $correct_answers = $_POST['correct_answer'];
 
-    // Ouvrir le fichier CSV pour ajouter les questions
+    // Vérifiez si l'utilisateur est connecté grace a session  et on récupérez son rôle
+    if (isset($_SESSION['role'])) {
+        $role = $_SESSION['role'];
+    } else {
+        // Redirigez l'utilisateur vers la page de connexion s'il n'est pas connecté
+        header('Location: ../../inscription et conexion/connexion.php');
+        exit(); // stoper l'execution du script
+    }
+
+    // Ouvrir le fichier CSV pour ajouter les questions en mode append
     $qcm_questions_file = fopen("qcm_questions.csv", "a");
     if ($qcm_questions_file) {
-        // Écrire les questions pour le nouveau QCM
+        // Écrire les questions pour le nouveau QCM avec le nom du créateur
         for ($i = 0; $i < count($questions); $i++) {
-            $line = "$qcm_name," . ($i + 1) . ",{$questions[$i]},{$options1[$i]},{$options2[$i]},{$options3[$i]},{$correct_answers[$i]}\n";
+            // Assurez-vous d'échapper les caractères spéciaux pour éviter les problèmes de format CSV
+            $line = "$qcm_name," . ($i + 1) . ",{$questions[$i]},{$options1[$i]},{$options2[$i]},{$options3[$i]},{$correct_answers[$i]},$role\n";
             fwrite($qcm_questions_file, $line);
         }
         fclose($qcm_questions_file);

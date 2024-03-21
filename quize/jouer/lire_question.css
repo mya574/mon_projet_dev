@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(Sans\ titre.jpg);
+    background-size: cover;
+}
+h1 {
+    color: black;
+    margin-left: 650px;
+}
+h2{
+    color: black;
+    margin-left: 400px;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 300px;
+    margin-right: 300px;
+    box-shadow:2px 3px 9px black;
+}
+
+button[type="submit"] {
+    background-color: #dd00ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 400px;
+}
+
+button[type="submit"]:hover {
+    background-color: #9a0af4;
+}
+
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 300px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+input[type="hidden"] {
+    display: none;
+}
