@@ -1,8 +1,14 @@
+/* Réinitialisation des styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
 }
 
 h1 {
@@ -10,28 +16,55 @@ h1 {
     margin-top: 20px;
 }
 
+/* Liste des QCM */
 ul {
     list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     padding: 0;
-    margin: 20px auto;
-    width: 80%;
 }
 
 li {
-    background-color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #4e4d52;
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start; /* Aligner le contenu en haut */
+    flex-direction: column; /* Mettre le contenu en colonne */
 }
 
+/* Nom du QCM */
+ul li span {
+    color: rgb(6, 6, 6);
+    background-color: #f4f4f4;
+    width: 150px;
+    height: 35px;
+    align-items: center;
+    border-radius: 40%;
+    margin-left: 60px;
+    display: flex;
+    margin-top: 9px; /* Ajouter une marge en haut */
+}
+
+/* Lien pour jouer */
 a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
     transition: color 0.3s;
+    background-color: rgb(244, 99, 27);
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto; /* Aligner le bouton en bas */
+    margin-left: 75px;
 }
 
 a:hover {
-    color: #007bff;
+    background-color: #007bff;
 }

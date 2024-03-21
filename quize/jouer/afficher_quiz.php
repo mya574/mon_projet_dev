@@ -10,7 +10,6 @@
     <h1>Liste des QCM</h1>
     <ul>
         <?php
-
             $qcm_names = file("../creation-quiz/qcm_names.csv", FILE_IGNORE_NEW_LINES);
             if ($qcm_names === false) {
                 die("Erreur lors de la lecture du fichier CSV");
