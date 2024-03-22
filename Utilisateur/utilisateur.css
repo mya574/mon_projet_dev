@@ -1,0 +1,27 @@
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #c626f73e;
+}
+
+.logo {
+    float: left; 
+    width: 300px;
+}
+
+.menu {
+    float: right; 
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+

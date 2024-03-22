@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(img3.jpg);
+    background-size: cover;
+}
+/* Style de la barre de navigation */
+.navbar {
+    overflow: hidden; /* Permet de cacher le contenu qui dépasse de la barre de navigation */
+    background-color: #c626f73e;
+}
+
+/* Style du logo */
+.logo {
+    float: left; /* Faire flotter le logo à gauche */
+    width: 300px;
+}
+
+/* Style des liens de navigation */
+.menu {
+    float: right; /* Faire flotter le menu à droite */
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Style des liens de la barre de navigation */
+.navbar a {
+    display: block; /* Afficher les liens en bloc */
+    color: #080707; /* Couleur du texte des liens */
+    text-align: center; /* Centrer le texte des liens */
+    padding: 32px 20px; /* Espacement intérieur des liens */
+    text-decoration: none; /* Supprimer la décoration des liens */
+}
+
+/* Style des liens de la barre de navigation au survol */
+.navbar a:hover {
+    background-color: #ddd; /* Couleur de fond des liens au survol */
+    color: black; /* Couleur du texte des liens au survol */
+}
+
+.tout{
+    background-color: #ffffffae;
+    width: 60%;
+    height: auto;
+    margin: 50px auto; /* Centre le contenu verticalement et horizontalement */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#qcm_name{
+    border: 3px solid #000000;  
+    border-radius: 20px;
+}
+#questions_container button{
+    padding: 10px 20px;
+    background-color: #e33030;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: 500px;
+    border-radius: 20px;
+}
+#questions_container button:hover{
+    background-color: #9b0909;
+}
+
+.question {
+    border: 3px solid #000000;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+.btn1 {
+    padding: 10px 20px;
+    background-color: #1181e3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 300px;
+    
+}
+.btn3{
+    padding: 10px 20px;
+    background-color: #1181e3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left:320px; 
+}
+
+button:hover {
+    background-color: #0056b3;
+}
