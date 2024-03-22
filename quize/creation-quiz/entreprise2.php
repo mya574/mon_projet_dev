@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des QCM de l'école</title>
+    <title>Liste des QCM de l'entreprise</title>
     <link rel="stylesheet" href="designe.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="navbar">
         <div class="logo">
-            <img src="quizzeo-removebg-preview.png" alt="Logo">
+            <img src="logo.png" alt="Logo">
         </div>
         <div class="menu">
-            <a href="entreprise2.php">mes quizes</a>
-            <a href="entreprise.php">cree</a>
-            <a href="../inscription et conexion/connexion.php">Deconnexion</a>
+            <a href="entreprise2.php">mes quiz</a>
+            <a href="entreprise.php">créer</a>
+            <a href="../inscription et conexion/connexion.php">Déconnexion</a>
         </div>
     </div>
     <div class="container">
-        <h1>Liste des QCM de l'école</h1>
+        <h1>Liste des quiz</h1>
         <table>
             <thead>
                 <tr>
@@ -40,7 +40,6 @@
                     $file = fopen($csv_file, 'r');
                     if ($file) {
                         while (($line = fgetcsv($file)) !== false) {
-                            // Affiche uniquement les lignes avec le rôle "ecole"
                             if ($line[7] == 'entreprise') {
                                 echo '<tr>';
                                 echo '<td>' . $line[0] . '</td>';
@@ -65,7 +64,7 @@
             </tbody>
         </table>
     </div>
-    <a  class="btn5" href="entreprise.php">ajouter un quize</a>
+    <a  class="btn5" href="entreprise.php">ajouter un quiz</a>
 </body>
 </html>
 

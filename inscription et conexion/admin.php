@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
- <p>bien venu admin kaka</p>
+ <p>bien venu admin </p>
 </body>
 </html>

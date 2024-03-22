@@ -10,7 +10,7 @@
     <h1>Questionnaire</h1>
     <form action="resultat.php" method="post">
         <?php
-            if(isset($_GET['qcm_name'])) {
+            if(isset($_GET['qcm_name'])) {//vrf l'existance de qcm name
                 $qcm_name = $_GET['qcm_name'];
                 $qcm_questions = file("../creation-quiz/qcm_questions.csv", FILE_IGNORE_NEW_LINES);
                 if ($qcm_questions === false) {
@@ -18,11 +18,11 @@
                 }
 
                 echo "<h2>$qcm_name</h2>";
-                echo "<input type='hidden' name='qcm_name' value='$qcm_name'>";
+                echo "<input type='hidden' name='qcm_name' value='$qcm_name'>";//champ cache envoiyer le nom qcm avec reponse
                 echo "<ol>";
                 foreach ($qcm_questions as $question) {
                     $data = explode(",", $question);
-                    if ($data[0] === $qcm_name) {
+                    if ($data[0] === $qcm_name) {//verifie le nom de mon qcm selectioner 
                         echo "<li>$data[2]</li>";
                         echo "<input type='hidden' name='question[]' value='{$data[2]}'>";
                         echo "<input type='radio' name='answer{$data[1]}' value='1'> {$data[3]}<br>";

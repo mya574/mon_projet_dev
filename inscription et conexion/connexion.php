@@ -1,13 +1,13 @@
 <?php
 session_start();
-$error = "";
+$error = "";//variable stocke msg d'erreur 
 
 if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POST['role'])) {
     $file_name = 'utilisateurs.csv';
     $file = fopen($file_name, 'r');
 
     if ($file) {
-        while (($line = fgetcsv($file)) !== false) {
+        while (($line = fgetcsv($file)) !== false) {//parcoure chaque ligne 
             if (isset($line[2]) && isset($line[3]) && isset($line[4]) && $line[2] === $_POST['identifiant'] && $line[4] === $_POST['role']) {
                 if (password_verify($_POST['mot_de_passe'], $line[3])) {
                     $_SESSION['identifiant'] = $_POST['identifiant'];
@@ -29,7 +29,7 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
                                 break;
                         default:
                             // Redirection par défaut
-                            header('Location: index.php');
+                            header('Location: premiere2.php');
                             break;
                     }
                     exit(); // Terminer le script après la redirection
@@ -53,6 +53,7 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
+    <link rel="stylesheet" href="connexion.css">
 </head>
 <body>
 <div class="container">
@@ -66,15 +67,17 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
         <label for="mot_de_passe">Mot de passe :</label>
         <input type="password" id="mot_de_passe" name="mot_de_passe" required>
         <label for="role">Rôle :</label>
-        <input type="radio" id="admin" name="role" value="admin" required>
-        <label for="admin">Admin</label>
-        <input type="radio" id="ecole" name="role" value="ecole" required>
-        <label for="ecole">Ecole</label>
-        <input type="radio" id="utilisateur" name="role" value="utilisateur" required>
-        <label for="utilisateur">Utilisateur</label>
-        <input type="radio" id="entreprise" name="role" value="entreprise" required>
-        <label for="entreprise">entreprise</label>
-        <input type="submit" value="Se connecter">
+        <div class="radio-group">
+             <input type="radio" id="admin" name="role" value="admin" required>
+             <label for="admin">Admin</label>
+             <input type="radio" id="ecole" name="role" value="ecole" required>
+             <label for="ecole">Ecole</label>
+             <input type="radio" id="utilisateur" name="role" value="utilisateur" required>
+             <label for="utilisateur">Utilisateur</label>
+             <input type="radio" id="entreprise" name="role" value="entreprise" required>
+             <label for="entreprise">entreprise</label>
+        </div>
+        <input  type="submit" value="Se connecter">
     </form>
 </div>
 </body>

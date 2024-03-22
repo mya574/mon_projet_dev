@@ -10,7 +10,7 @@
  <div class="contenu">
     <h1>Résultat du QCM</h1>
     <?php
-        if(isset($_POST['qcm_name'])) {
+        if(isset($_POST['qcm_name'])) { //vrf existance qcm name 
             $qcm_name = $_POST['qcm_name'];
 
             $qcm_questions = file("../creation-quiz/qcm_questions.csv", FILE_IGNORE_NEW_LINES);
@@ -24,7 +24,7 @@
                 $data = explode(",", $question);
                 if ($data[0] === $qcm_name) {
                     $total_questions++;
-                    $user_answer = isset($_POST['answer' . $data[1]]) ? intval($_POST['answer' . $data[1]]) : null;
+                    $user_answer = isset($_POST['answer' . $data[1]]) ? intval($_POST['answer' . $data[1]]) : null;//recup reponse user 
                     $correct_answer = intval($data[6]);
                     if ($user_answer !== null && $user_answer === $correct_answer) {
                         $score++;

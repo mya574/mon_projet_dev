@@ -9,7 +9,7 @@
 /* Styles généraux */
 body {
     font-family: Arial, sans-serif;
-    background-image: url(Sans\ titre.jpg);
+    background-image: url(../creation-quiz/img3.jpg);
     background-size: cover;
 }
 
@@ -28,7 +28,7 @@ ul {
 }
 
 li {
-    background-color: rgb(199, 123, 225);
+    background-color: papayawhip;
     border: 3px solid black;
     width: 250px;
     height: 150px;

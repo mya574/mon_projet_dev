@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Créateur de QCM</title>
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 <body>
 <div class="navbar">
         <div class="logo">
-            <img src="quizzeo-removebg-preview.png" alt="Logo">
+            <img src="logo.png" alt="Logo">
         </div>
         <div class="menu">
-            <a href="ecole2.php">mes quizes</a>
-            <a href="ecole.php">cree</a>
-            <a href="../inscription et conexion/connexion.php">Deconnexion</a>
+            <a href="ecole2.php">mes quiz</a>
+            <a href="ecole.php">créer</a>
+            <a href="../inscription et conexion/connexion.php">Déconnexion</a>
         </div>
     </div>
   <div class="tout">
-    <h1>Créateur de QCM</h1>
+    <h1>Créer votre quiz</h1>
     <form action="create_qcm.php" method="post">
         <label for="qcm_name">Nom du QCM :</label>
         <input type="text" id="qcm_name" name="qcm_name" required>
@@ -45,14 +45,14 @@
         </div>
         <button class="btn1" type="button" onclick="addQuestion()">Ajouter une question</button>
         <br><br>
-        <button class="btn3" type="submit">Créer QCM</button>
+        <button class="btn3" type="submit">Créer le quiz</button>
     </form>
     </div>
     <script>
-        function addQuestion() {
-            var container = document.getElementById("questions_container");
+        function addQuestion() { //j'appelle ma fenction
+            var container = document.getElementById("questions_container");//id present sur la div cont le form
             var newQuestion = document.createElement("div");
-            newQuestion.classList.add("question");
+            newQuestion.classList.add("question");//ajoute le css de class countainer
             newQuestion.innerHTML = `
                 <label for="question">Question :</label>
                 <input type="text" name="question[]" required>
@@ -74,7 +74,7 @@
         }
 
         function removeQuestion(button) {
-            var questionDiv = button.parentElement;
+            var questionDiv = button.parentElement;//l'element parent du bouton cliquer
             questionDiv.remove();
         }
     </script>

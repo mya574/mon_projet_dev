@@ -1,7 +1,57 @@
 .container {
-    background-color: #ef1515;
+    text-align: center;
+    margin-top: 10%;
+    border-radius: 30px;
+    border-color: black;
+    background-color: rgba(255, 255, 255, 0.69);
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
     padding: 20px;
-    border-radius: 8px;
-    width: 300px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: inline-block;
+    width: 120px; 
+}
+
+.radio-group {
+    display: inline-block;
+ 
+}
+
+.radio-group label {
+    margin-right: 10px;
+}
+
+body {
+    background-image: url("../quize/creation-quiz/img3.jpg");
+    background-size: cover;
+}
+
+#button {
+    font-size: 1em;
+    color: white;
+    background: #fbb21f;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+
+#button:hover {
+    letter-spacing: 4px;
+}
+
+.rca {
+    display: inline-block;
     text-align: center;
 }

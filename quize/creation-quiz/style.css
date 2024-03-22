@@ -3,49 +3,47 @@ body {
     background-image: url(img3.jpg);
     background-size: cover;
 }
-/* Style de la barre de navigation */
 .navbar {
-    overflow: hidden; /* Permet de cacher le contenu qui dépasse de la barre de navigation */
-    background-color: #c626f73e;
+    overflow: hidden; 
 }
-
-/* Style du logo */
 .logo {
-    float: left; /* Faire flotter le logo à gauche */
+    float: left; 
     width: 300px;
 }
-
-/* Style des liens de navigation */
 .menu {
-    float: right; /* Faire flotter le menu à droite */
+    float: right; 
     width: 700px;
     display: flex;
     justify-content: space-around;
 }
 
-/* Style des liens de la barre de navigation */
+
 .navbar a {
-    display: block; /* Afficher les liens en bloc */
-    color: #080707; /* Couleur du texte des liens */
-    text-align: center; /* Centrer le texte des liens */
-    padding: 32px 20px; /* Espacement intérieur des liens */
-    text-decoration: none; /* Supprimer la décoration des liens */
+    border-radius: 20%;
+    display: block; 
+    color: #080707; 
+    text-align: center;
+    padding: 15px 10px; 
+    border: 20%;
+    text-decoration: none; 
+   
 }
 
-/* Style des liens de la barre de navigation au survol */
+
 .navbar a:hover {
-    background-color: #ddd; /* Couleur de fond des liens au survol */
-    color: black; /* Couleur du texte des liens au survol */
+    background-color: #ddd;
+    border-radius:20%;
+    color: black; 
 }
 
 .tout{
     background-color: #ffffffae;
     width: 60%;
     height: auto;
-    margin: 50px auto; /* Centre le contenu verticalement et horizontalement */
+    margin: 50px auto; 
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
 }
 
 h1 {

@@ -2,9 +2,7 @@
 if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POST['role'])) {
     $file_name = 'utilisateurs.csv';
 
-    // Vérifier si l'utilisateur est en train de s'inscrire en tant qu'administrateur
     if ($_POST['role'] === 'admin') {
-        // Ouvrir le fichier CSV et rechercher s'il existe déjà un compte administrateur
         $file = fopen($file_name, 'r');
         $admin_exists = false;
 
@@ -39,7 +37,7 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['identifiant
     fclose($file);
 
     header('Location: connexion.php');
-    exit(); // Terminer le script après la redirection
+    exit(); 
 }
 ?>
 
@@ -49,6 +47,7 @@ if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['identifiant
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
+    <link rel="stylesheet" href="inscription.css">
 </head>
 <body>
 <div class="container">

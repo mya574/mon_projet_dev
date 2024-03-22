@@ -10,16 +10,16 @@
 <body> 
 <div class="navbar">
         <div class="logo">
-            <img src="quizzeo-removebg-preview.png" alt="Logo">
+            <img src="logo.png" alt="Logo">
         </div>
         <div class="menu">
-            <a href="ecole2.php">mes quizes</a>
-            <a href="ecole.php">cree</a>
-            <a href="../../inscription et conexion/connexion.php">Deconnexion</a>
+            <a href="ecole2.php">mes quiz</a>
+            <a href="ecole.php">créer</a>
+            <a href="../../inscription et conexion/connexion.php">Déconnexion</a>
         </div>
 </div>   
     <div class="container">
-        <h1>Liste des QCM de l'école</h1>
+        <h1>Liste des quiz </h1>
         <table>
             <thead>
                 <tr>
@@ -36,13 +36,12 @@
             <tbody>
                 <?php
                 $csv_file = 'qcm_questions.csv';
-                if (file_exists($csv_file)) {
+                if (file_exists($csv_file)) {//verification
                     $file = fopen($csv_file, 'r');
                     if ($file) {
-                        while (($line = fgetcsv($file)) !== false) {
-                            // Affiche uniquement les lignes avec le rôle "ecole"
-                            if ($line[7] == 'ecole') {
-                                echo '<tr>';
+                        while (($line = fgetcsv($file)) !== false) {//lit chaque ligne 
+                            if ($line[7] == 'ecole') {//verification
+                                echo '<tr>';//demarre une nouvelle ligne de tableau
                                 echo '<td>' . $line[0] . '</td>';
                                 echo '<td>' . $line[1] . '</td>';
                                 echo '<td>' . $line[2] . '</td>';
@@ -65,7 +64,7 @@
             </tbody>
         </table>
     </div>
-    <a  class="btn5" href="ecole.php">ajouter un quize</a>
+    <a  class="btn5" href="ecole.php">ajouter un quiz</a>
 </body>
 </html>
 

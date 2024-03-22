@@ -21,19 +21,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ouvrir le fichier CSV pour ajouter les questions en mode append
     $qcm_questions_file = fopen("qcm_questions.csv", "a");
     if ($qcm_questions_file) {
-        // Écrire les questions pour le nouveau QCM avec le nom du créateur
+        //parcour mon tableau de questions  
         for ($i = 0; $i < count($questions); $i++) {
-            // Assurez-vous d'échapper les caractères spéciaux pour éviter les problèmes de format CSV
             $line = "$qcm_name," . ($i + 1) . ",{$questions[$i]},{$options1[$i]},{$options2[$i]},{$options3[$i]},{$correct_answers[$i]},$role\n";
             fwrite($qcm_questions_file, $line);
         }
         fclose($qcm_questions_file);
     } else {
         echo "Erreur lors de l'écriture des questions.";
-        exit(); // Arrêter le script en cas d'erreur
+        exit(); 
     }
 
-    // Ajouter le nom du QCM au fichier CSV des noms de QCM
+    
     $qcm_names_file = fopen("qcm_names.csv", "a");
     if ($qcm_names_file) {
         fwrite($qcm_names_file, "$qcm_name\n");

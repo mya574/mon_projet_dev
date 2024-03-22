@@ -9,18 +9,18 @@
 <body>
 <div class="navbar">
         <div class="logo">
-            <img src="quizzeo-removebg-preview.png" alt="Logo">
+            <img src="logo.png" alt="Logo">
         </div>
         <div class="menu">
-            <a href="entreprise2.php">mes quizes</a>
-            <a href="entreprise.php">cree</a>
-            <a href="../inscription et conexion/connexion.php">Deconnexion</a>
+            <a href="entreprise2.php">mes quiz</a>
+            <a href="entreprise.php">créer</a>
+            <a href="../inscription et conexion/connexion.php">Déconnexion</a>
         </div>
     </div>
  <div class="tout">
-    <h1>Créateur de QCM</h1>
+    <h1>créer votre quiz</h1>
     <form action="create_qcm.php" method="post">
-        <label for="qcm_name">Nom du QCM :</label>
+        <label for="qcm_name">Nom du quiz:</label>
         <input type="text" id="qcm_name" name="qcm_name" required>
         <br><br>
         <div id="questions_container">
@@ -44,7 +44,7 @@
         </div>
         <button  class="btn1" type="button" onclick="addQuestion()">Ajouter une question</button>
         <br><br>
-        <button  class="btn3"type="submit">Créer QCM</button>
+        <button  class="btn3"type="submit">Créer le quiz</button>
     </form>
     </div>
     <script>
