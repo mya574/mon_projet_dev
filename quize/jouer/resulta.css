@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(Sans\ titre.jpg);
+    background-size: cover;
+}
+
+h1 {
+    color: black;
+}
+
+p {
+    color: black;
+}
+
+p.score {
+    font-weight: bold;
+}
+.contenu {
+    background-color: rgb(226, 172, 228);
+    padding: 20px; 
+    width: 30%; 
+    height: 350px;
+    margin: 100px auto; 
+    border-radius: 20px; 
+    box-shadow: 2px 3px 4px black;
+}
