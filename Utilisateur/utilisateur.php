@@ -8,17 +8,18 @@
 </head>
 <body>
     <div class="navbar">
-        <div class="logo">
-            <img src="./logo.png" alt="Logo">
-        </div>
+             <div class="logo">
+             <img src="./logo.png" alt="Logo">
+            </div>
         <div class="menu">
-        <button id="modifierInfosBtn">Profil</button>
-        <button id="deconnexionBtn">Déconnexion</button>
-</div>
-    <div class="container">
-        <h1>Page Utilisateur</h1>
-    <button id="accéderQuizBtn">Accéder au Quiz</button>
-</div>
+            <button id="modifierInfosBtn">Profil</button>
+            <button id="deconnexionBtn">Déconnexion</button>
+       </div>
+    </div>
+        <div class="container">
+             <h1>Page Utilisateur</h1>
+             <button id="accéderQuizBtn">Accéder au Quiz</button>
+        </div>
     
     
 <script>
