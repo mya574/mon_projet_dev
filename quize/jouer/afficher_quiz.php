@@ -13,8 +13,8 @@
             <img src="../creation-quiz/logo.png" alt="Logo">
         </div>
         <div class="menu">
-            <a href="ecole2.php">mes quizes</a>
-            <a href="ecole.php">cree</a>
+            <a href="afficher_quiz.php">mes quizes</a>
+            <a href="modifier_infos.php">mon profil</a>
             <a href="../../inscription et conexion/connexion.php">Deconnexion</a>
         </div>
 </div>   

@@ -22,7 +22,7 @@ if (isset($_POST['identifiant']) && isset($_POST['mot_de_passe']) && isset($_POS
                             header('Location: ../quize/creation-quiz/ecole.php');
                             break;
                         case 'utilisateur':
-                            header('Location: ../quize/jouer/afficher_quiz.php');
+                            header('Location: ../quize/jouer/utilisateur.php');
                             break;
                             case 'entreprise':
                                 header('Location: ../quize/creation-quiz/entreprise.php');
