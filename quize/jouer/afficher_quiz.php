@@ -13,8 +13,8 @@
             <img src="../creation-quiz/quizzeo-removebg-preview.png" alt="Logo">
         </div>
         <div class="menu">
-            <a href="ecole2.php">mes quizes</a>
-            <a href="ecole.php">cree</a>
+            <a href="ecole2.php">mes quiz</a>
+            <a href="ecole.php">créer</a>
             <a href="../../inscription et conexion/connexion.php">Deconnexion</a>
         </div>
 </div>   
